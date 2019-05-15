@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>现场图片</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="renderer" content="webkit" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" href="css/certify.css">
+		<script src="js/swiper.min.js"></script>
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<!--右边-->
+		<div class="screenLayout">
+			<!--上面大图-->
+			<div class="belowContentLayout1">
+				<!--顶部提示标签--->
+				<ul class="formMainLayout">
+					<!--<li>
+						<img class="" src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1555165445&di=b5ff13cf73dbd9b3aead0eb3febee807&src=http://pic24.nipic.com/20121008/10031483_155205097366_2.jpg" />
+						<div class="liDiv">
+							<span>2019/04/00 13:36:04</span>
+							<span>01000</span>
+							<span>8000</span>
+						</div>
+					</li>-->
+				</ul>
+				<!--顶部提示标签--->
+			</div>
+			<!--上面大图-->
+			<!--下面大图-->
+			<div class="smallGraph">
+				<div class="tio">
+					<ul>
+						<!--<li>
+							<img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1555165445&di=b5ff13cf73dbd9b3aead0eb3febee807&src=http://pic24.nipic.com/20121008/10031483_155205097366_2.jpg" />
+							<span class="whiteM"></span>
+						</li>-->
+
+					</ul>
+				</div>
+			</div>
+			<!--下面大图-->
+		</div>
+		<!--右边-->
+
+		<script>
+			var isNextRecord = true; //是否可以下一条
+			var array = [{
+					url: "https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1555165445&di=b5ff13cf73dbd9b3aead0eb3febee807&src=http://pic24.nipic.com/20121008/10031483_155205097366_2.jpg"
+					,time: '2019/04/00 13:36:04', //时间
+					deviceNumber: '01000', //监控设备号
+					department: '8000', //部门id
+				},
+				{
+					url: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555175819207&di=04a32a83ee5d23948887e9ad401e119d&imgtype=0&src=http%3A%2F%2Fpic30.nipic.com%2F20130605%2F12949204_213054651194_2.jpg"
+					,time: '2019/04/01 13:36:04', //时间
+					deviceNumber: '01001', //监控设备号
+					department: '8001', //部门id
+				}, {
+					url: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555175819204&di=5f0d571286c6e3065d3c672e7fdef7f7&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F12%2F94%2F58%2F33P58PICiJu.jpg"
+					,time: '2019/04/02 13:36:04', //时间
+					deviceNumber: '01002', //监控设备号
+					department: '8002', //部门id
+				}, {
+					url: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555175819203&di=46b9df62669895d3d0c1c6f4ecce04ea&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F6%2F577dff80d6ee1.jpg"
+					,time: '2019/04/03 13:36:04', //时间
+					deviceNumber: '01003', //监控设备号
+					department: '8003', //部门id
+				}, {
+					url: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555175819201&di=1fe08412522f1388ff74caf79bd5acb8&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fwallpaper%2F1209%2F11%2Fc0%2F13783009_1347330674323.jpg"
+					,time: '2019/04/04 13:36:04', //时间
+					deviceNumber: '01004', //监控设备号
+					department: '8004', //部门id
+				}, {
+					url: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555175819200&di=873c68d5cca5fc41485e9e0d418a251a&imgtype=0&src=http%3A%2F%2Fpic5.nipic.com%2F20100118%2F2572038_202108043540_2.jpg"
+					,time: '2019/04/05 13:36:04', //时间
+					deviceNumber: '01005', //监控设备号
+					department: '8005', //部门id
+				}, {
+					url: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555175819200&di=6d9d41646313e071f09c6cf6d228a1ae&imgtype=0&src=http%3A%2F%2Fpic37.nipic.com%2F20140117%2F2531170_215624628000_2.jpg"
+					,time: '2019/04/06 13:36:04', //时间
+					deviceNumber: '01006', //监控设备号
+					department: '8006', //部门id
+				}
+			]
+			
+			//把图片放入
+			var smallGraphString = "";
+			var formMainLayoutString = "";
+			var index = 0;//当前轮播下标
+			var whiteM = '';
+			for(var i = 0;i<array.length;i++){
+				whiteM = '';
+				if(i == 0){
+					whiteM = 'whiteM ';
+					formMainLayoutString = '<li>'+
+												'<img class="" src="'+array[i].url+'" />'+
+												'<div class="liDiv">'+
+													'<span>'+array[i].time+'</span>'+
+													'<span>'+array[i].deviceNumber+'</span>'+
+													'<span>'+array[i].department+'</span>'+
+												'</div>'+
+											'</li>';
+				}
+				smallGraphString += '<li>' + 
+										'<img src="'+array[i].url+'" />' + 
+										'<span class="'+whiteM+'"></span>' + 
+									'</li>' ;
+			}
+			
+			
+			$('.smallGraph .tio ul').html(smallGraphString);//小图
+			$('.formMainLayout').html(formMainLayoutString);//大图
+			timing();//定时
+			//把图片放入
+			
+				//鼠标滑动事件
+			$(".smallGraph .tio ul li").hover(function() {
+				index = $(this).index();
+				setcolourIndex(index);
+				isNextRecord = false; //是否可以下一条
+				setTimeout(function() {
+					isNextRecord = true; //是否可以下一条
+				}, 5000)
+				//一直在上面
+			}, function() {
+				//一直在离开
+				isNextRecord = true; //是否可以下一条
+			})
+			
+			//设置选中颜色
+			function setcolourIndex(index){
+				 $(".smallGraph .tio ul li span").removeClass('whiteM');
+				 var smallGraphUl = $(".smallGraph .tio ul li");
+				 for(var i = 0;i<smallGraphUl.length;i++){
+				 	if(i == index){
+				 		$(smallGraphUl[i]).find('span').addClass('whiteM');
+				 		break;
+				 	}
+				 }
+				 
+				 //替换
+				 var formMainLayoutString = '';
+				 if(index > -1 && index< array.length){
+				 	 formMainLayoutString = '<li>'+
+												'<img class="" src="'+array[index].url+'" />'+
+												'<div class="liDiv">'+
+													'<span>'+array[index].time+'</span>'+
+													'<span>'+array[index].deviceNumber+'</span>'+
+													'<span>'+array[index].department+'</span>'+
+												'</div>'+
+											'</li>';
+				 }
+				 $('.formMainLayout').html(formMainLayoutString);
+				
+			}
+			
+			/**
+			 * 定时轮播
+			 */
+			function timing() {
+				setInterval(function() {
+					if(isNextRecord){
+						if((index + 1) == array.length){
+							index = 0;
+						}else{
+							index ++;
+						}
+						setcolourIndex(index);
+					}
+				}, 3000)
+			}
+
+		</script>
+	</body>
+
+</html>

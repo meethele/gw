@@ -1,0 +1,260 @@
+@charset "utf-8";
+/*--头部-->*/
+ .spanNoData{
+	 position: relative;
+	 width: 100%;
+	 height: 100%;
+	 font-size: 20px; 
+	 color:#333;
+	 @include displayFlex(row, center, center);
+ }
+.topLayout {
+	position: relative;
+	width: 100%;
+	height: 70px;
+	@include displayFlex(row, center, space-bettween);
+	background: #232527;
+}
+
+.leftLayout {
+	position: relative;
+	padding: 0 30px;
+	@include displayFlex(row, center, center);
+	.logoImgs {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		width: 54px;
+		height: 38px;
+		background: url('../img/logo.png') no-repeat !important;
+		background-size: 54px 38px !important;
+		display: block;
+		
+	}
+	.name {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		margin-left: 10px;
+		font-size: 14px;
+		color: rgba($color: #ffffff, $alpha: 0.5);
+	}
+}
+.rightLayout {
+	position: relative;
+	flex: 1;
+	@include displayFlex(row, center, flex-end);
+	.tiem {
+		position: relative;
+		font-size: 14px;
+		color: rgba($color: #ffffff, $alpha: 0.5);
+	}
+	.tiemDivision {
+		position: relative;
+		font-size: 14px;
+		margin: 0 20px;
+		color: rgba($color: #ffffff, $alpha: 0.5);
+	}
+	.imgLayout {
+		position: relative;
+		padding: 0 30px;
+		img {
+			position: relative;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+		}
+	}
+}
+/*--头部-->*/
+.contentLayout { 
+	position: relative;
+	height: calc(100% - 70px);
+	@include displayFlex(row, center, center);
+	overflow: hidden;
+	.leftMenu{
+	    position: relative;
+	    height: 100%;
+	    @include displayFlex(row, center, center);
+	    background: #0000FF;
+	    .returnLayout{
+            position: absolute;
+            right: 5px;
+            bottom: 20px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.3);
+            z-index: 9999;
+             @include displayFlex(row, center, center);
+        }
+	}
+	.menuMainLayout {
+		position: relative;
+		width: 200px;
+		height: 100%;
+		background: #343638;
+		@include displayFlex(column, center, space-between);
+		max-height:  100%;
+		.menuUlLayout{
+			position: relative;
+			width: 100%;
+			flex: 1;
+			max-height: 90%;
+		}
+		li,.shezhiLayout{
+			position: relative;
+			width: 100%;
+			height:55px;
+			@include displayFlex(column, center, center);
+			.name{
+				position: relative;
+				font-size: 2px;
+				text-align: center;
+				color: #acacac;
+				margin-top: 2px;
+				display: block;
+			}
+		}
+		li:hover{
+			background: rgba(255,255,255,0.1);  
+		}
+		li:active{
+			background: rgba(255,255,255,0.1);  
+		}
+		.shezhiLayout{
+			margin-bottom: 4px;
+		}
+		.liA{
+			background: #656565;
+		}
+		.symenu-zuosanjiao{
+			position: absolute;
+			right: 0;
+			top: 21.5px;
+		}
+		
+	}
+	.adddoc_tstk{
+		position: relative;
+		height: 100%;
+		background: #f3f3f3;
+		max-height:  100%;
+		overflow: hidden;
+		overflow-y: auto;
+	}
+	//中间
+	.middleUlLayout{
+		position: relative;
+		display: none;
+		width: 170px;
+		height: 100%;
+		background: #f3f3f3;
+		max-height:  100%;
+		li{
+			position: relative;
+			width: 100%;
+			font-size: 2px;
+			text-align: center;
+			color:#333;
+			@include displayFlex(column, center, center);
+			.middlTitleLayout{
+			    position: relative;
+			    width: 100%;
+			    background: #f3f3f3;
+			    padding: 10px 10px;
+			    @include displayFlex(row, center, center);
+			    .nameTitle{
+			         position: relative;
+			         flex: 1;
+			         color:#333;
+			         display: block;
+			         font-size: 14px;
+			         text-align: left;
+			    }
+			}
+			.middlTitleLayout:hover{
+                background: rgba(#C8C8C8,0.2);  
+            }
+            .middlTitleLayout:active{
+                background: rgba(#C8C8C8,0.2);  
+            }
+            .middlTitleA{
+                background: #C8C8C8;
+            }
+			ul{
+			    position: relative;
+			    width: 100%;
+			    display: none;
+			    border-left: #f3f3f3 solid 1px;
+			    border-right: #f3f3f3 solid 1px;
+			    padding: 2px 0 ;
+			    background: #FFFFFF;
+			    li{
+			         position: relative;
+			         padding: 5px 10px;
+			         background: #ffffff;
+                     width: 100%;
+			         color:#333;
+                     display: block;
+                     font-size: 12px;
+                     text-align: left;
+			    }
+			}
+           .middleBlock{
+               display: block;
+           }
+		}
+		li:hover{
+			background: rgba(#C8C8C8,0.2);  
+		}
+		li:active{
+			background: rgba(#C8C8C8,0.2);  
+		}
+		.liA{
+			background: #C8C8C8;
+		}
+	}
+	.middleUlLayoutNone{
+		display: none;
+	}
+	.middleUlLayoutBlock{
+		display: block;
+	}
+	//右边的内容
+	.menurightLayout2 {
+		position: relative;
+		flex: 1;
+		height: 100%; 
+		display: block;
+	
+		iframe{
+			position: relative;
+			width: 100%;
+			height: 100%;
+			display: block;
+			border: none;
+		}
+		//首页图标
+		.symenu-shouyetubiaoLayout{
+			position: absolute;
+			left: 15px;
+			top: 15px;
+			z-index: 333;
+			width: 50px;
+			height: 50px;
+			background: #343638;
+			border-radius: 50%;
+			@include displayFlex(column, center, center);
+			.name{
+			    position: relative;
+			    font-size: 0.5px !important;
+			    color: #c8c8c8;
+			}
+		}
+		
+		
+	}
+    //右边的内容
+  
+}

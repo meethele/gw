@@ -1,0 +1,93 @@
+
+@mixin css3($property, $value) {
+    @each $prefix in -webkit-,
+    -moz-,
+    -ms-,
+    -o-,
+    '' {
+        #{$prefix}#{$property}: $value;
+    }
+}
+//$flow:column,row
+//css3的布局$items表示垂直的布局：flex-start,flex-end,center;
+//$content表示水平的布局:flex-start,flex-end,center,space-bettween,space-around
+@mixin displayFlex($flow,$items, $content) {
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-flow: $flow;
+    -webkit-flex-flow: $flow;
+    flex-flow: $flow;
+    -webkit-align-items: $items;
+    align-items: $items;
+    -webkit-justify-content: $content;
+    justify-content: $content;
+}
+// opacity
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    filter: alpha(opacity=$opacity * 100);
+}
+
+// clearfix
+@mixin clearfix {
+    *zoom: 1;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+//text-overflow: ellipsis;
+@mixin overell {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin box-sizing($box-sizing) {
+    -webkit-box-sizing: $box-sizing;
+    -moz-box-sizing: $box-sizing;
+    box-sizing: $box-sizing;
+}
+
+@mixin calc($name, $px) {
+    #{$name}:-moz-calc(#{$px});
+    #{$name}:-webkit-calc(#{$px});
+    #{$name}:calc(#{$px});
+}
+
+@mixin calc($property, $expression) {
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}
+
+@mixin calcNew($name, $px) {
+    #{$name}:-moz-calc(#{$px});
+    #{$name}:-webkit-calc(#{$px});
+    #{$name}:calc(#{$px});
+}
+
+//icon
+
+/*图标*/
+
+@mixin icon($url, $width, $height) {
+    display: inline-block;
+	width: $width;
+	height: $height;
+    background: url($url) no-repeat;
+    background-size:  $width $height;
+}
+@mixin appicon($left, $top, $width, $height) {
+    background-position: $left $top;
+    width: $width;
+    height: $height;
+}
+
+
+/*focus/textare*/
+
+@mixin inpfocus {
+    border: 1px solid $gray-56;
+}

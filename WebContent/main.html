@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<title>首页</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<script src="js/jquery-1.8.3.min.js" type="text/javascript"
+	charset="utf-8"></script>
+<style type="text/css">
+</style>
+</head>
+
+<body>
+	<div class="content">
+		<!--头部-->
+		<ul class="topLayout">
+			<li class="leftLayout"><span class="logoImgs"></span> <span
+				class="name">八方智控*智能生产信息化平台</span></li>
+			<li class="rightLayout"><span class="tiem" id="years"></span> <span
+				class="tiemDivision">/</span> <span class="tiem" id="minutesSting"></span>
+				<span class="tiemDivision">/</span> <span class="tiem" id="week"></span>
+				<div class="imgLayout">
+					<img src="img/touxaing.jpg" />
+				</div></li>
+		</ul>
+		<!--头部-->
+		<!--内容-->
+		<section class="contentLayout">
+			<!---左边菜单--->
+			<div class="leftMenu">
+				<!--左边-->
+				<article class="menuMainLayout">
+					<ul id="menuUlLayout" class="menuUlLayout">
+						<li class="menuLiLayout liA"><span
+							class="symenu-caidanshouye"></span> <span class="name">首页</span>
+							<span class="symenu-zuosanjiao"></span></li>
+						<li class="menuLiLayout"><span class="symenu-cheliangkaoqin"></span>
+							<span class="name">车辆考勤</span></li>
+						<li class="menuLiLayout"><span class="symenu-renyuanguani"></span>
+							<span class="name">人员</span></li>
+						<li class="menuLiLayout"><span class="symenu-banqianjiancha"></span>
+							<span class="name">班前检查</span></li>
+						<li class="menuLiLayout"><span class="symenu-jiayouji"></span>
+							<span class="name">加油机</span></li>
+						<li class="menuLiLayout"><span class="symenu-weixiuxiangmu"></span>
+							<span class="name">维修项目</span></li>
+						<li class="menuLiLayout"><span class="symenu-dingweiguanli"></span>
+							<span class="name">定位系统</span></li>
+						<li class="menuLiLayout"><span class="symenu-chaoshicanyin"></span>
+							<span class="name">超市餐饮</span></li>
+
+					</ul>
+					<li class="shezhiLayout"><span class="symenu-shezhiguanli"></span>
+						<span class="name">设置</span></li>
+				</article>
+				<!--左边-->
+				<!--中间-->
+				<div class="adddoc_tstk">
+					<ul id="middleUlLayout-1" class="middleUlLayout">
+						<li class="itme">
+							<div class="middlTitleLayout">
+								<span class="nameTitle">车辆考勤产品展示</span> <span
+									class="tubiao symenu-xiasanjiao2"></span>
+							</div>
+							<ul>
+								<!--class="middleBlock"-->
+								<li>产品展示</li>
+							</ul>
+						</li>
+						<li class="itme">
+							<div class="middlTitleLayout">
+								<span class="nameTitle">常见问题</span> <span
+									class="tubiao  symenu-xiasanjiao2"></span>
+							</div>
+							<ul>
+								<li>XXX</li>
+								<li>XXX</li>
+								<li>XXX</li>
+							</ul>
+						</li>
+
+					</ul>
+				</div>
+				<!--中间-->
+				<!--返回按钮-->
+				<div class="returnLayout">
+					<span class="symenu-sfanhui"></span>
+				</div>
+				<!--返回按钮-->
+			</div>
+			<!---左边菜单--->
+			<!--右边 homePage-->
+			<div class="menurightLayout2">
+
+				<div class="symenu-shouyetubiaoLayout">
+					<span class="symenu-scaidan"></span>
+				</div>
+				<iframe id="iframe" src="homePage.html"></iframe>
+			</div>
+			<!--右边-->
+		</section>
+		<!--内容-->
+	</div>
+	
+
+	<script>
+			var secondLevelMenu = undefined;//二级菜单
+			setTiem(); //获取时间
+			$('.menuMainLayout').hide();
+			var parentName = '首页'; //当前父菜单
+			var findName = ''; //当前子菜单（最后的结果）
+			//返回按钮点击事件
+			$('.returnLayout').click(function(){
+				$('.menuMainLayout').hide();//主菜单隐藏
+				$('.symenu-shouyetubiaoLayout').show();//右上觉菜单显示
+				$('.adddoc_tstk').find('ul').removeClass("middleUlLayoutBlock");
+				$('.adddoc_tstk').find('ul').addClass("middleUlLayoutNone");
+			})
+			//按钮图标点击事件
+			$('.symenu-shouyetubiaoLayout').click(function() {
+				$('.symenu-shouyetubiaoLayout').hide();
+				$('.menuMainLayout').show();
+				
+				if(secondLevelMenu != undefined && secondLevelMenu != 'undefined'){
+					secondLevelMenu.addClass("middleUlLayoutBlock");
+				}
+
+			})
+			//第一级菜单点击事件
+			$('body #menuUlLayout').on('click', 'li', function() {
+				secondLevelMenu = undefined;//二级菜单
+				var index = $(this).index(); //下标
+				$('.symenu-shouyetubiaoLayout').hide();
+				//左边菜单点击事件
+				$('.shezhiLayout').removeClass("liA");
+				$('.shezhiLayout').find('.symenu-zuosanjiao').remove();
+				$('#menuUlLayout').find('li').removeClass("liA");
+				$(this).addClass('liA');
+				if($('#menuUlLayout').find('li').find('.symenu-zuosanjiao') != undefined) {
+					$('#menuUlLayout').find('li').find('.symenu-zuosanjiao').remove();
+				}
+				$(this).append('<span class="symenu-zuosanjiao"></span>');
+				//左边菜单点击事件
+				//二级菜单处理
+				$('.adddoc_tstk').find('ul').removeClass("middleUlLayoutBlock");
+				$('.adddoc_tstk').find('ul').addClass("middleUlLayoutNone");
+				$('#middleUlLayout-' + index).addClass("middleUlLayoutBlock");
+				secondLevelMenu = $('#middleUlLayout-' + index);//二级菜单
+				parentName = $(this).find('.name').html(); //当前父菜单
+
+				var middlTitarray = $('#middleUlLayout-' + index).find('li').find('.middlTitleLayout');
+				if(middlTitarray.length > 0) {
+					var i = 0;
+					for(i = 0; i < middlTitarray.length; i++) {
+						if($(middlTitarray[i]).attr('class') != undefined && ($(middlTitarray[i]).attr('class')).indexOf('Selection') > -1) {
+							break;
+						}
+					}
+					if(i >= middlTitarray.length) {
+						i = 0;
+					}
+					twoMenuHandle(middlTitarray[i], true);
+				} else {
+					//没有菜单证明没有子项
+					findName = '';
+					setiframe();
+				}
+				//二级菜单处理
+
+			})
+			//第一级菜单点击事件
+			//第二级菜单点击菜单点击事件
+			$('body .middleUlLayout li').on('click', '.middlTitleLayout', function() {
+				$('.symenu-shouyetubiaoLayout').hide();
+				twoMenuHandle(this);
+			});
+
+			//第二级菜单点击菜单点击事件
+			//第三级级菜单点击菜单点击事件
+			$('body .middleUlLayout li ul').on('click', 'li', function() {
+				$(this).siblings().removeClass('liA');
+				$(this).addClass('liA');
+				findName = $(this).html();
+				if(findName == undefined || findName == 'undefined') {
+					findName = '';
+				}
+				setiframe();
+			})
+			//第三级级菜单点击菜单点击事件
+			//设置点击事件
+			$('.shezhiLayout').click(function() {
+				$('.symenu-shouyetubiaoLayout').hide();
+				$('#menuUlLayout').find('li').removeClass("liA");
+				if($('#menuUlLayout').find('li').find('.symenu-zuosanjiao') != undefined) {
+					$('#menuUlLayout').find('li').find('.symenu-zuosanjiao').remove();
+				}
+				$(this).addClass('liA');
+				$(this).append('<span class="symenu-zuosanjiao"></span>');
+				$('.adddoc_tstk').find('ul').removeClass("middleUlLayoutBlock");
+				$('.adddoc_tstk').find('ul').addClass("middleUlLayoutNone");
+				parentName = '设置'; //当前父菜单
+				findName = '';
+				setiframe();
+			})
+			//设置点击事件
+
+			/**
+			 * 设置显示的iframe
+			 */
+			function setiframe() {
+				var xString = findName == '' ? parentName : findName;
+				switch(xString) {
+					case '首页':
+						$('#iframe').attr('src', 'homePage.html');
+						break;
+					case '产品展示':
+						$('#iframe').attr('src', 'displayPro.html');
+						break;
+					case '图片预览':
+						$('#iframe').attr('src', 'scenePictureV1.html');
+						break;
+					case '车辆考勤表':
+						$('#iframe').attr('src', 'checkWork.html');
+						break;
+					case '考勤机管理':
+						$('#iframe').attr('src', 'attendanceMachine.html');
+						break;
+					case '挖机管理':
+						$('#iframe').attr('src', 'excavatorManagement.html');
+						break;
+					case '车辆管理':
+						$('#iframe').attr('src', 'vehicleAdministration.html');
+						break;
+					default:
+
+						$('#iframe').attr('src', 'NoData.html');
+						break;
+				}
+			}
+			/**
+			 * 设置时间
+			 */
+			function setTiem() {
+				var tiem = getTiem_function();
+				$('#years').html(tiem.years);
+				$('#minutesSting').html(tiem.minutesSting);
+				$('#week').html(tiem.week);
+				setInterval(function() {
+					tiem = getTiem_function();
+					$('#years').html(tiem.years);
+					$('#minutesSting').html(tiem.minutesSting);
+					$('#week').html(tiem.week);
+				}, 1000)
+			}
+
+			/**
+			 * 二级菜单处理函数
+			 * @param {Object} _this
+			 */
+			function twoMenuHandle(_this, is) {
+				var isOpen = false;
+				if(($(_this).find('.tubiao').attr('class')).indexOf('symenu-xiasanjiao2') > -1) {
+					//是否打开
+					isOpen = true;
+
+				}
+				//处理滑动效果
+				var publicLi = $(_this).parent().parent().find('.itme');
+				for(var i = 0; i < publicLi.length; i++) {
+					if((is && $(publicLi[i]).find('.middlTitleLayout').find('.nameTitle').html() != $(_this).find('.nameTitle').html()) || !is) {
+						$(publicLi[i]).find('ul').slideUp(200);
+						$(publicLi[i]).find('.middlTitleLayout').find('.tubiao').removeClass("symenu-dakaisanjiao");
+						$(publicLi[i]).find('.middlTitleLayout').find('.tubiao').removeClass("symenu-xiasanjiao2");
+						if($(publicLi[i]).find('ul').find('li').length != 0) {
+							$(publicLi[i]).find('.middlTitleLayout').find('.tubiao').addClass("symenu-xiasanjiao2");
+						}
+					}
+
+					$(publicLi[i]).find('.middlTitleLayout').removeClass("middlTitleA");
+					$(publicLi[i]).find('.middlTitleLayout').removeClass("Selection");
+
+				}
+				if(isOpen) {
+					$(_this).find('.tubiao').removeClass("symenu-xiasanjiao2");
+					$(_this).find('.tubiao').addClass("symenu-dakaisanjiao");
+					$(_this).parent().find('ul').slideToggle(200);
+				}
+				//处理滑动效果
+				//处理颜色等问题
+
+				$(_this).parent().find('.middlTitleLayout').addClass("Selection");
+				if($(_this).parent().find('ul').find('li').length == 0) {
+					//只有当前本身
+					findName = $(_this).parent().find('.middlTitleLayout').find('.nameTitle').html();
+					if(findName == undefined || findName == 'undefined') {
+						findName = '';
+					}
+					$(_this).parent().find('.middlTitleLayout').addClass("middlTitleA");
+				} else {
+					var findLiArray = $(_this).parent().find('ul').find('li');
+					var i = 0;
+					for(i = 0; i < findLiArray.length; i++) {
+						if($(findLiArray[i]).attr('class') != undefined && ($(findLiArray[i]).attr('class')).indexOf('liA') > -1) {
+							break;
+						}
+					}
+					if(i >= findLiArray.length) {
+						i = 0;
+					}
+					$(findLiArray[i]).addClass('liA');
+					findName = $(findLiArray[i]).html();
+					if(findName == undefined || findName == 'undefined') {
+						findName = '';
+					}
+
+				}
+				//处理颜色等问题
+				setiframe();
+			}
+
+			/**
+			 * 获取时间时间
+			 */
+			function getTiem_function() {
+
+				var sta_date = new Date();
+				var year = sta_date.getFullYear();
+				var month = transformation(sta_date.getMonth() + 1);
+				var day = transformation(sta_date.getDate());
+				var hours = transformation(sta_date.getHours()); // 获取当前小时数(0-23)
+				var minutes = transformation(sta_date.getMinutes()); // 获取当前分钟数(0-59)
+				var seconds = transformation(sta_date.getSeconds()); // 获取当前秒数(0-59)
+				var week = onDay(year, month, day);
+				return {
+					year: year,
+					month: month,
+					day: day,
+					hours: hours,
+					minutes: minutes,
+					seconds: seconds,
+					week: week,
+					years: year + "." + month + "." + day,
+					minutesSting: hours + ":" + minutes + ":" + seconds,
+				}
+
+				/**
+				 * 转化 00 格式
+				 */
+				function transformation(string) {
+					string = Number(string);
+					if((string + "") == 'NaN') {
+						return '00';
+					} else if(string >= 10) {
+						return string + "";
+					} else {
+						return "0" + (string + "");
+					}
+				}
+				/* 获取当前是星期几
+				 * @param {Object} year
+				 * @param {Object} month
+				 * @param {Object} day
+				 */
+				function onDay(year, month, day) {
+					var myDate = new Date();
+					myDate.setFullYear(Number(year), Number(month) - 1, Number(day));
+					var week = myDate.getDay();
+					switch(week) {
+						case 0:
+							return '星期日';
+							break;
+						case 1:
+							return '星期一';
+							break;
+						case 2:
+							return '星期二';
+							break;
+						case 3:
+							return '星期三';
+							break;
+						case 4:
+							return '星期四';
+							break;
+						case 5:
+							return '星期五';
+						case 6:
+							return '星期六';
+							break;
+
+					}
+					return '未知星期';
+				}
+			}
+
+			//鼠标事件
+			document.onkeydown = function(event) {
+				var e = event || window.event || arguments.callee.caller.arguments[0];
+				var xString = findName == '' ? parentName : findName;
+				switch(xString) {
+					case '现场图复查':
+						var frameWin = document.getElementById("iframe").contentWindow;
+						frameWin.method(e.keyCode); //method为子页面的方法
+						break;
+				}
+
+			};
+		</script>
+</body>
+
+</html>

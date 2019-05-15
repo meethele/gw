@@ -1,0 +1,337 @@
+@charset "utf-8";
+//右边的内容
+.reviewLayout {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: block;
+	@include displayFlex(column, center, center);
+	padding: 0 1px;
+	.screenMianLayout{
+		position: relative;
+		width: 100%;
+		@include displayFlex(row, center, space-between);
+		height: 85px;
+		background: #F3F3F3;
+		padding: 0 25px;
+		li{
+			position: relative;
+			flex: 1;
+			@include displayFlex(column, center, center);
+			.name{
+				position: relative;
+				font-size: 14px;
+				color: #333;
+				
+			}
+			
+		
+			.valueLayout{
+				position: relative;
+				width: 150px;
+				height: 28px;
+				margin-top: 10px;
+				border: #c8c8c8 solid 1px;
+				border-radius: 14px;
+				text-align: center;
+				@include displayFlex(row, center, center);
+				.input{
+					position: relative;
+					flex: 1;
+					width: 100px;
+					border: none;
+					text-align: center;
+					font-size: 14px;
+					color:  #333 ;
+					background: none; 
+					padding: 0 5px;
+					text-align:center; 
+					text-align-last: center;
+				}
+				.input option{
+				    text-align:center; 
+				    text-align-last: center;
+				}
+				.symenu-xiasanjiao{
+					margin-right: 10px;
+				}
+				.symenu-sousuo{
+					margin-right: 5px;
+				}
+				.queding{
+					position: relative;
+					width: 100%;
+					height: 100%;
+					font-size: 14px;
+					color:  #333 ;
+					background: #acd598;
+					border-radius: 14px;
+					text-align: center;
+				}
+			}
+			.valueLayout2{
+				border:  #acd598 solid 1px;
+				background: rgba($color: #ffffff, $alpha: 0.6)
+			}
+			.valueLayout2:hover{
+				background: rgba($color: #e4e4e4, $alpha: 0.5);  
+			}
+			.valueLayout2:active{
+				background: rgba($color: #e4e4e4, $alpha: 0.5);  
+			}
+			.valueLayout1{
+				width: 250px;
+				.input{
+					width: 220px;
+				}
+			}
+			.valueLayout3{
+				width: 200px;
+				.input{
+					width: 180px;
+				}
+			}
+		}
+	}
+	
+	.belowContentMianLayout{
+	    position: relative;
+	    flex: 1;
+	    @include displayFlex(row, center, center);
+	    width: 100%;
+        margin-top: 5px;
+        .belowContentImgsLayout{
+             position: relative;
+             height: 100%;
+             width: 60%;
+             @include displayFlex(column, center, center);
+             .name{
+                font-size: 14px;
+                color: #333;
+                font-weight: bold;
+                width: 100%;
+                padding: 10px 5px;
+                  border-left: #FFFFFF solid 2px;
+                @include displayFlex(column, center, center); 
+                background: #f3f3f3;
+                
+             }
+             .belowContentImgs{
+               position: relative;
+               flex: 1;
+               width: 100%;
+               border-left: #F3F3F3 solid 2px;
+               background: #dc3535;
+            }
+        }
+	    
+	}
+	.belowContentLayout{
+		position: relative;
+		flex: 1;
+		height: 100%;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		padding-bottom: 5px;
+		overflow-y: auto;
+		background: #F3F3F3;
+		
+		.formMainLayout{
+			position: relative;
+			width: 100%;
+			.liWhite{
+				background: #f3f3f3;
+				padding: 10px 5px;
+			}
+			li{
+				position: relative;
+				width: 100%;
+				padding: 8px 5px;
+				background: #ffffff;
+				@include displayFlex(row, center, space-between);
+				font-size: 14px;
+				color: #333;
+				border-bottom: #f3f3f3 solid 1px;
+				.number{
+					position: relative;
+					width: 60px;
+					text-align: center;
+					padding: 0 3px;
+				}
+				.imgs{
+					position: relative;
+					width: 80px;
+					text-align: center;
+					
+				}
+				.imgs1{
+					height: 60px;
+					border-radius: 3px;
+					background: #232527;
+					display: block;
+					cursor: pointer;
+                    transition: all 0.6s;
+
+				}
+				.imgs1:hover{
+                    transform: scale(1.4);
+                }
+                .imgs1:active{
+                    transform: scale(1.4);
+                }
+
+				.time{
+					position: relative;
+					flex: 1.5;
+					text-align: center;
+					padding: 0 3px;
+					word-break: break-all;
+				}
+				.time1{
+					position: relative;
+					flex: 0.5;
+					text-align: center;
+					padding: 0 3px;
+					word-break: break-all;
+				}
+				
+				.cardNumber{
+					position: relative;
+					flex: 1;
+					text-align: center;
+					padding: 0 3px;
+					@include displayFlex(row, center, center);
+					word-break: break-all;
+					
+				}
+				.modify{
+					position: relative;
+					font-size: 14px;
+					color:  #fff ;
+					width: 75px;
+					height: 25px;
+					background: #dc3535;
+					border-radius: 14px;
+					@include displayFlex(row, center, center);
+					
+				}
+				.modify:hover{
+					background: rgba(#dc3535,0.5);  
+				}
+				.modify:active{
+					background: rgba(#dc3535,0.5);  
+				}
+				.valueLayout{
+					position: relative;
+					padding: 1px 3px;
+					border: #c8c8c8 solid 1px;
+					border-radius: 14px;
+					@include displayFlex(row, center, center);
+					.input{
+						position: relative;
+						flex: 1;
+						min-width: 60px;
+						border: none;
+						text-align: center;
+						font-size: 14px;
+						color:  #333 ;
+						background: none; 
+						padding: 0 5px;
+					}
+					.symenu-xiasanjiao{
+						margin-right: 10px;
+					}
+					.queding{
+						position: relative;
+						width: 100%;
+						height: 100%;
+						font-size: 14px;
+						color:  #333 ;
+						background: #acd598;
+						border-radius: 14px;
+						text-align: center;
+					}
+					.queding:hover{
+						background: rgba($color: #000000, $alpha: 0.5);  
+					}
+					.queding:active{
+						background: rgba($color:  #000000, $alpha: 0.5);  
+					}
+				}
+				.valueLayout:hover{
+					background: rgba($color: #e4e4e4, $alpha: 0.5);  
+				}
+				.valueLayout:active{
+					background: rgba($color: #e4e4e4, $alpha: 0.5);  
+				}
+				
+			}
+			li:hover{
+                background: rgba($color: #f1f1f1, $alpha: 0.1);  
+            }
+            li:active{
+                background: rgba($color: #f1f1f1, $alpha: 0.1);   
+            }
+            .lihover:hover{
+                background: rgba($color:#0092dc,$alpha:0.1);  
+            }
+            .lihover:active{
+                background: rgba($color:#0092dc,$alpha:0.1); 
+            }
+			.liWhite:hover{
+                background: #f3f3f3;  
+            }
+            .liWhite:active{
+                background: #f3f3f3;  
+            }
+            .liColor {
+                background: rgba($color:#0092dc,$alpha:0.3);
+                .colorState{
+                   color: #333 !important;
+                }
+            }
+		}
+	    
+	}
+	
+}
+.colorState{
+	color: #479646 !important;
+}
+.bottomPaging{
+	position: relative;
+	width: 100%;
+	border: none;
+	height: 35px;  
+	padding: 0;
+	margin: 0;
+}
+//右边的内容
+.valueLayouthover:hover{
+	background: rgba($color: #e4e4e4, $alpha: 0.5);  
+}
+.valueLayouthover:active{
+	background: rgba($color: #e4e4e4, $alpha: 0.5);  
+}
+.valueLayouthover1:hover{
+	background: rgba($color: #ffffff, $alpha: 0.5);  
+}
+.valueLayouthover1:active{
+	background: rgba($color: #ffffff, $alpha: 0.5);  
+}
+
+
+/**图片弹出事件预览**/
+.pictureDialog{
+	 position: relative;
+	 overflow: hidden;
+	 width: 700px;
+	 height: 400px;
+	 background: #dc3535;
+	 margin: 0;
+	 padding: 0;
+	 display: none;
+	 vertical-align:top;
+	 border: none;
+}
+/**图片弹出事件预览**/

@@ -1,0 +1,77 @@
+@charset "utf-8";
+//右边的内容
+.menurightLayout {
+	position: relative;
+	flex: 1;
+	height: 100%;
+	background: url('../img/shouyebeijing.png') no-repeat !important;
+	background-size: 100% 100% !important;
+	display: block;
+	overflow-y: auto;
+	@include displayFlex(column, center, center);
+	.welcome {
+		position: relative;
+		width: 100%;
+		font-size: 30px;
+		text-align: center;
+		color: rgba($color: #ffffff, $alpha: 0.5);
+	}
+
+	.btnLayout {
+		position: relative;
+		margin-top: 60px;
+		@include displayFlex(row, flex-start, flex-start);
+		.btnLiLayout {
+			position: relative;
+			@include displayFlex(column, flex-start, center);
+
+			.systemLayout {
+				position: relative;
+				@include displayFlex(row, center, center);
+				.systemimgs {
+					position: relative;
+					width: 25px;
+					height: 15px;
+					background: url('../img/xitongxinxi.png') no-repeat !important;
+					background-size: 25px 15px !important;
+					display: block;
+				}
+				.systemimgs1 {
+					position: relative;
+					width: 15px;
+					height: 15px;
+					background: url('../img/souquanxinxi.png') no-repeat !important;
+					background-size: 15px 15px !important;
+					display: block;
+				}
+				.systemimgs2 {
+					position: relative;
+					width: 15px;
+					height: 15px;
+					background: url('../img/yonghuxinxi.png') no-repeat !important;
+					background-size: 15px 15px !important;
+					display: block;
+				}
+				.systemText {
+					position: relative;
+					font-size: 8px;
+					text-align: center;
+					margin-left: 10px;
+					color: rgba($color: #ffffff, $alpha: 0.5);
+				}
+			}
+			.text {
+				position: relative;
+				font-size: 8px;
+				text-align: center;
+				color: rgba($color: #ffffff, $alpha: 0.5);
+				margin-top: 5px;
+				display: block;
+			}
+		}
+		.btnLiLayoutmarginleft {
+			margin-left: 60px;
+		}
+	}
+}
+//右边的内容

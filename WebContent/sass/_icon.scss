@@ -1,0 +1,115 @@
+@charset "utf-8";
+//图标
+//首页左边菜单-首页
+.symenu-shouyetubiao{
+	@include icon('../img/shouyetubiao.png', 50px, 50px);
+}
+//首页左边菜单-首页图标
+.symenu-caidanshouye{
+	@include icon('../img/caidanshouye.png', 20px, 20px);
+}
+//首页左边菜单-首页
+.symenu-souye{
+	@include icon('../img/souquanxinxi.png', 15px, 15px);
+}
+//首页左边菜单-车辆考勤
+.symenu-cheliangkaoqin{
+	@include icon('../img/cheliangkaoqin.png', 20px, 18px);
+}
+//首页左边菜单-人员
+.symenu-renyuanguani{
+	@include icon('../img/renyuanguani.png', 19px, 19px);
+}
+//首页左边菜单-班前检查
+.symenu-banqianjiancha{
+	@include icon('../img/banqianjiancha.png', 25px, 20px);
+}
+//首页左边菜单-加油机
+.symenu-jiayouji{
+	@include icon('../img/jiayouji.png', 22px, 20px);
+}
+//首页左边菜单-维修项目
+.symenu-weixiuxiangmu{
+	@include icon('../img/weixiuxiangmu.png', 20px, 20px);
+}
+//首页左边菜单-定位系统
+.symenu-dingweiguanli{
+	@include icon('../img/dingweiguanli.png', 23px, 23px);
+}
+//首页左边菜单-超市餐饮
+.symenu-chaoshicanyin{
+	@include icon('../img/chaoshicanyin.png', 20px, 20px);
+}
+//首页左边菜单-设置
+.symenu-shezhiguanli{
+	@include icon('../img/shezhiguanli.png', 20px, 20px);
+}
+
+
+
+
+
+//首页左边菜单-左三角
+.symenu-zuosanjiao{
+	@include icon('../img/zuosanjiao.png', 10px, 12px);
+}
+
+
+//下三角
+.symenu-xiasanjiao{
+	@include icon('../img/xiasanjiao.png', 20px, 22px);
+}
+//下三角
+.symenu-xiasanjiao2{
+    @include icon('../img/xiasanjiao.png', 15px, 17px);
+}
+//上三角
+.symenu-dakaisanjiao{
+    @include icon('../img/dakaisanjiao.png', 12px, 14px);
+}
+//下三角黑色
+.symenu-xiasanjiaoshanxuan{
+	@include icon('../img/xiasanjiaoshanxuan.png', 10px, 12px);
+}
+//搜索
+.symenu-sousuo{
+	@include icon('../img/sousuo (2).png', 20px, 22px);
+}
+//新增机组
+.symenu-xinzengjizu{
+	@include icon('../img/xinzengjizu.png', 20px, 22px);
+}
+//导出系统
+.symenu-daochuxitong{
+	@include icon('../img/daochuxitong.png', 20px, 22px);
+}
+//左前进大
+.symenu-zuoqianjinda{
+	@include icon('../img/zuoqianjinda.png', 16px, 14px);
+}
+//左前进小
+.symenu-zuoqianjinxiao{
+	@include icon('../img/zuoqianjinxiao.png', 16px, 14px);
+}
+//右前进大
+.symenu-youqianjinda{
+	@include icon('../img/youqianjinda.png',  16px, 14px);
+}
+//右前进小
+.symenu-youqianjinxiao{
+	@include icon('../img/youqianjinxiao.png', 16px, 14px);
+}
+//刷新分页
+.symenu-shuaixinfenye{
+	@include icon('../img/shuaixinfenye.png',  16px, 16px);
+}
+
+//刷新分页
+.symenu-sfanhui{
+    @include icon('../img/fanhui (1).png',  32px, 28px);
+}
+//刷新分页
+.symenu-scaidan{
+    @include icon('../img/caidan (2).png',  25px, 25px);
+}
+

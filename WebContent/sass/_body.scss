@@ -1,0 +1,460 @@
+@charset "utf-8";
+html {
+    color: #000;
+    background: #fff;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow-x: auto;
+    overflow-y: auto;
+    position: relative;
+}
+
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    @include box-sizing(border-box);
+}
+
+
+/*定义字体*/
+
+body,
+button,
+input,
+select,
+textarea {
+    //表示字体大小加行高，20px/12px 约等于1.6667，向上四舍五入
+    font: 12px/1.6667 "Microsoft YaHei", Arial, Helvetica, sans-serif, "SimSun";
+}
+
+input,
+select,
+textarea {
+    // 设置字体属性为默认大小，是相对于浏览器默认字体大小或继承body设定的字体大小来说的
+    font-size: 100%;
+    line-height: inherit; //控件元素默认行高是normal是不受外部影响的，需要重置为inherit
+}
+
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    
+}
+
+
+/* HTML5 媒体文件跟 img 保持一致 */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+
+/* 去掉各Table cell 的边距并让其边重合 */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* IE bug fixed: th 不继承 text-align*/
+
+th {
+    text-align: inherit;
+}
+
+
+/* 去除默认边框 */
+
+fieldset,
+img {
+    border: 0;
+}
+
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+
+iframe {
+    display: block;
+}
+
+
+/* 去掉 firefox 下此元素的边框 */
+
+// abbr 标签指示简称或缩写; acronym 标签定义首字母缩略词(H5不支持)
+abbr,
+acronym {
+    border: 0;
+    font-variant: normal;
+}
+
+
+/* 一致的 del 样式 */
+
+// 标签定义文档中已删除的文本。
+del {
+    text-decoration: line-through; // 定义穿过文本下的一条线。
+}
+
+// <cite> 标签来定义作品的标题; <address> 标签定义文档作者/所有者的联系信息; <caption> 标签定义表格的标题; <code> 标签是一个短语标签，用来定义计算机代码文本;<dfn> 定义一个定义项目;<em>强调文本;<var>变量
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+    font-style: normal; // 浏览器显示一个标准的字体样式
+    font-weight: 500;
+}
+
+
+/* 去掉列表前的标识, li 会继承 */
+
+ol,
+ul {
+    list-style: none;
+}
+
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+
+caption,
+th {
+    text-align: left;
+}
+
+
+/* 标题都自定义, 适应多个系统应用 */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: 500;
+}
+
+q:before,
+q:after {
+    // q标记一个短的引用
+    content: '';
+}
+
+.bd,
+.hd {
+    width: 100%;
+    clear: both;
+}
+
+select {
+    vertical-align: middle;
+}
+
+
+/* 统一上标和下标 */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+
+/* 加粗 */
+
+.fwb {
+    font-weight: bold;
+}
+
+
+/* 左浮动 */
+
+.lt {
+    float: left;
+}
+
+
+/* 右浮动 */
+
+.rt {
+    float: right;
+}
+
+.clearB {
+    clear: both;
+}
+
+
+/*12号字*/
+
+.f12 {
+    font-size: 12px;
+    /*大小*/
+}
+
+
+/*14号字*/
+
+.f14 {
+    font-size: 14px;
+    /*大小*/
+}
+
+
+/*16号字*/
+
+.f16 {
+    font-size: 16px;
+    /*大小*/
+}
+
+
+/*18号字*/
+
+.f18 {
+    font-size: 18px;
+    /*大小*/
+}
+
+
+/*20号字*/
+
+.f20 {
+    font-size: 20px;
+    /*大小*/
+}
+
+//margin
+.mgr5 {
+    margin-right: 5px;
+}
+
+.mgr10 {
+    margin-right: 10px;
+}
+
+.mgr20 {
+    margin-right: 20px;
+}
+
+.mgl5 {
+    margin-left: 5px;
+}
+
+.mgl10 {
+    margin-left: 10px;
+}
+
+.mgl15 {
+    margin-left: 15px;
+}
+
+.mgl30 {
+    margin-left: 30px;
+}
+
+.mgt5 {
+    margin-top: 5px;
+}
+
+.mgt15 {
+    margin-top: 15px;
+}
+
+.mgt30 {
+    margin-top: 30px;
+}
+
+.mgt10 {
+    margin-top: 10px;
+}
+
+.mgt75 {
+    margin-top: 75px;
+}
+
+.mgb5 {
+    margin-bottom: 5px;
+}
+
+.mgb10 {
+    margin-bottom: 10px;
+}
+
+//display
+.dyn {
+    display: none;
+}
+
+.dyi {
+    display: inline-block;
+}
+
+.dyb {
+    display: block;
+}
+
+//
+.vih {
+    visibility: hidden;
+}
+
+
+/*被访问过链接*/
+
+a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+        text-decoration: none;
+        color: $gray-56;
+    }
+}
+
+.blue {
+    color: $primary;
+}
+
+.green {
+    color: $success;
+}
+
+.gray {
+    color: $gray-a7;
+}
+
+//
+.overOne {
+    @include overell;
+}
+
+//换行
+.wbword {
+    word-break: break-word;
+}
+
+//手型
+.curp {
+    cursor: pointer;
+}
+
+//头部尾部固定高
+#header {
+    height: 54px;
+}
+
+#footer {
+    height: 85px;
+}
+
+#footer2 {
+    height: 80px;
+}
+
+//去掉获取焦点时边框颜色
+select,
+textarea,
+button,
+input {
+    outline: none;
+}
+
+//颜色
+.cola7 {
+    color: $gray-a7;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+//内容 
+.content{
+	position: relative;
+	min-width:1200px;
+	width: 100%;
+	height: 100%;
+}

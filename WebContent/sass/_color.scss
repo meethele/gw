@@ -1,0 +1,42 @@
+@charset "utf-8";
+// font-family
+$font-family-sans-serif: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", 
+"Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif !default;
+$font-family-base:           $font-family-sans-serif !default;
+
+// color
+$white:            #fff         !default;              //白色
+$gray-a7:            #fff         !default;              //白色
+$borderBc:            #fff         !default;              //白色
+$black82:            #fff         !default;              //白色
+$white-d3:         #d3d3d3      !default;        //白色偏灰
+$white-fe:         #fefefe      !default;        //白色偏白
+$primary:          #37a0cf      !default;             //蓝色
+$success:          #0acb78      !default;            //绿色
+$warning:          #ffbf25      !default;           //黄色
+$danger:           #dc3535      !default;          //红色
+$royal:            #7b68c4      !default;         //紫色
+$orange:           #f0ad4e      !default;        //橙色
+
+$black:            #000         !default;       //黑色
+$gray-e3:          #333         !default;      //灰色
+$gray-e6:          #666         !default;     //灰色
+$gray-e9:          #999         !default;    //灰色
+$gray-56:          #565656      !default; //字体不加粗的黑色
+$gray-3f:          #3f3f3f      !default;//字体加粗之后的黑色
+
+$bgc:              #f5f5f5      !default;
+$border:           #ecefea      !default;   
+$hover:            #3169a7      !default;   
+// Witdh
+$Witdh:            100%           !default;
+$container:        750px          !default;
+$link-body:        $container     !default;
+
+
+// height
+$height:           44px           !default; 
+$link-height:      $height        !default; 
+
+// font-size
+$font-size:        14px           !default;
